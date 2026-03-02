@@ -1,3 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Practica</string>
+
+    <!-- Register Screen -->
+    <string name="register_title">Регистрация</string>
+    <string name="register_subtitle">Заполните свои данные</string>
+    <string name="name_label">Ваше имя</string>
+    <string name="name_placeholder">Введите ваше имя</string>
+    <string name="email_label">Email</string>
+    <string name="email_placeholder">ry@agmail.com</string>
+    <string name="password_label">Пароль</string>
+    <string name="password_placeholder">**********</string>
+    <string name="consent_text">Даю согласие на обработку персональных данных</string>
+    <string name="register_button">Зарегистрироваться</string>
+    <string name="already_have_account">Есть аккаунт?</string>
+    <string name="sign_in">Войти</string>
 </resources>
