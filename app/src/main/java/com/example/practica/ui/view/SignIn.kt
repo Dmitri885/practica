@@ -28,9 +28,11 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.practica.R
 import com.example.practica.ui.theme.practicaTheme
 import com.example.practica.ui.viewModel.SignInViewModel
 import com.example.practica.data.model.SignInRequest
+import com.example.practica.ui.theme.practicaTheme
 
 @Composable
 fun LoginScreen(
@@ -64,7 +66,11 @@ fun LoginScreen(
                     .clickable { navController.popBackStack() },
                 contentAlignment = Alignment.Center
             ) {
-
+                Icon(
+                    painter = painterResource(id = R.drawable.arrow),
+                    contentDescription = "Назад",
+                    tint = Color(0xFF555555)
+                )
             }
 
             Spacer(modifier = Modifier.height(30.dp)) // Такой же отступ как в Register
