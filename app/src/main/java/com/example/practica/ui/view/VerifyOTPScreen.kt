@@ -1,4 +1,4 @@
-package com.example.examen.ui.view
+package com.example.practica.ui.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

@@ -1,4 +1,4 @@
-package com.example.examen
+package com.example.practica
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -14,9 +14,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.examen.data.UserSession
-import com.example.examen.ui.theme.ExamenTheme
-import com.example.examen.ui.view.*
+import com.example.practica.data.UserSession
+import com.example.practica.ui.theme.practicaTheme
+import com.example.practica.ui.theme.practicaTheme
+import com.example.practica.ui.view.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-            ExamenTheme {
+            practicaTheme {
                 val navController = rememberNavController()
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
