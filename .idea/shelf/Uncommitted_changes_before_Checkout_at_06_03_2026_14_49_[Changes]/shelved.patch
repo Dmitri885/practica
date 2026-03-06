@@ -1,0 +1,22 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><<<<<<< HEAD\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.practica\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n    <uses-permission android:name=\"android.permission.CAMERA\" />\r\n\r\n    <uses-feature android:name=\"android.hardware.camera\"\r\n        android:required=\"false\" />\r\n    <uses-feature android:name=\"android.hardware.camera.autofocus\"\r\n        android:required=\"false\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.practica\">\r\n\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n\r\n        <provider\r\n            android:name=\"androidx.core.content.FileProvider\"\r\n            android:authorities=\"${applicationId}.fileprovider\"\r\n            android:exported=\"false\"\r\n            android:grantUriPermissions=\"true\">\r\n            <meta-data\r\n                android:name=\"android.support.FILE_PROVIDER_PATHS\"\r\n                android:resource=\"@xml/file_paths\" />\r\n        </provider>\r\n\r\n    </application>\r\n=======\r\n<!-- Манифест — это \"визитная карточка\" приложения для Android системы.\r\n     Здесь указывается уникальный идентификатор приложения (package),\r\n     а также всё, что система должна знать о нём ДО установки. -->\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.practica\">\r\n    <!-- Запрашиваем у пользователя разрешение-->\r\n   <uses-permission android:name=\"android.permission.INTERNET\" />\r\n   <uses-permission android:name=\"android.permission.CAMERA\" />\r\n\r\n   <uses-feature android:name=\"android.hardware.camera\"\r\n       android:required=\"false\" />\r\n   <uses-feature android:name=\"android.hardware.camera.autofocus\"\r\n       android:required=\"false\" />\r\n\r\n   <application\r\n       android:allowBackup=\"true\"\r\n       android:icon=\"@mipmap/ic_launcher\"\r\n       android:label=\"@string/app_name\"\r\n       android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n       android:supportsRtl=\"true\"\r\n       android:theme=\"@style/Theme.practica\">\r\n\r\n       <activity\r\n           android:name=\".MainActivity\"\r\n           android:exported=\"true\">\r\n           <intent-filter>\r\n               <action android:name=\"android.intent.action.MAIN\" />\r\n               <category android:name=\"android.intent.category.LAUNCHER\" />\r\n           </intent-filter>\r\n       </activity>\r\n\r\n       <!-- Специальный компонент для безопасной передачи файлов между приложениями\r\n            (например, чтобы передать фото из нашего приложения в Галерею или наоборот) -->\r\n       <provider\r\n           android:name=\"androidx.core.content.FileProvider\"\r\n           android:authorities=\"${applicationId}.fileprovider\"\r\n           android:exported=\"false\"\r\n           android:grantUriPermissions=\"true\">\r\n           <meta-data\r\n               android:name=\"android.support.FILE_PROVIDER_PATHS\"\r\n               android:resource=\"@xml/file_paths\" />\r\n       </provider>\r\n\r\n   </application>\r\n>>>>>>> Day-3\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 85dce4e0fea951eecda96e15d2f78f069b954321)
++++ b/app/src/main/AndroidManifest.xml	(date 1772797759028)
+@@ -1,4 +1,3 @@
+-<<<<<<< HEAD
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     package="com.example.practica">
+ 
+@@ -83,5 +82,4 @@
+        </provider>
+ 
+    </application>
+->>>>>>> Day-3
+ </manifest>
+\ No newline at end of file
