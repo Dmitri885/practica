@@ -24,16 +24,12 @@ import com.example.practica.ui.viewModel.NewPasswordViewModel
 /**
  * Экран установки нового пароля после подтверждения OTP-кода
  * Позволяет пользователю ввести и подтвердить новый пароль
- *
- * @param navController навигационный контроллер для переходов между экранами
- * @param email email пользователя, переданный с OTP-экрана (ВАЖНО: используется для идентификации)
- * @param viewModel view-model для обработки логики смены пароля (получается через viewModel())
  */
 @Composable
 fun NewPasswordScreen(
-    navController: NavHostController,
-    email: String, // ВАЖНО: сюда передаём email из OTP‑экрана
-    viewModel: NewPasswordViewModel = viewModel()
+    navController: NavHostController,//навигационный контроллер для переходов между экранами
+    email: String, // email пользователя, переданный с OTP-экрана (ВАЖНО: используется для идентификации)
+    viewModel: NewPasswordViewModel = viewModel()//view-model для обработки логики смены пароля (получается через viewModel())
 ) {
     // Состояния для хранения введенных паролей
     var password by remember { mutableStateOf("") } // Основной пароль
@@ -66,7 +62,7 @@ fun NewPasswordScreen(
                 // Иконка стрелки назад
                 Icon(
                     painter = painterResource(id = R.drawable.arrow),
-                    contentDescription = null, // Декоративный элемент, описание не требуется
+                    contentDescription = null, // Декоративный элемент
                     tint = Color.Black
                 )
             }
@@ -101,7 +97,6 @@ fun NewPasswordScreen(
 
             /**
              * Поле ввода нового пароля
-             * Использует PasswordVisualTransformation для скрытия символов
              */
             OutlinedTextField(
                 value = password,
@@ -131,16 +126,16 @@ fun NewPasswordScreen(
              */
             OutlinedTextField(
                 value = confirmPassword,
-                onValueChange = { confirmPassword = it },
-                visualTransformation = PasswordVisualTransformation(),
+                onValueChange = { confirmPassword = it },// Обновление состояния при вводе
+                visualTransformation = PasswordVisualTransformation(),// Скрытие ввода (точки вместо символов)
                 modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(12.dp),
-                placeholder = { Text("********") },
+                shape = RoundedCornerShape(12.dp),// Скругленные углы
+                placeholder = { Text("********") },// Текст-подсказка
                 colors = OutlinedTextFieldDefaults.colors(
-                    unfocusedContainerColor = Color(0xFFF7F7F7),
-                    focusedContainerColor = Color(0xFFF7F7F7),
-                    unfocusedBorderColor = Color.Transparent,
-                    focusedBorderColor = Color.Transparent
+                    unfocusedContainerColor = Color(0xFFF7F7F7),// Цвет фона когда поле не в фокусе
+                    focusedContainerColor = Color(0xFFF7F7F7),// Цвет фона когда поле в фокусе
+                    unfocusedBorderColor = Color.Transparent,// Убираем рамку когда не в фокусе
+                    focusedBorderColor = Color.Transparent// Убираем рамку когда в фокусе
                 )
             )
 

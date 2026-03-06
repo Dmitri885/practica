@@ -33,46 +33,34 @@ import kotlinx.coroutines.launch
 
 /**
  * Класс данных, представляющий категорию товаров в каталоге
- * @param id уникальный идентификатор категории в базе данных
- * @param title отображаемое название категории для пользователя
  */
 data class CatalogCategory(
-    val id: String,
-    val title: String
+    val id: String,//уникальный идентификатор категории в базе данных
+    val title: String//отображаемое название категории для пользователя
 )
 
 /**
  * Класс данных, представляющий товар в каталоге
- * @param id уникальный идентификатор товара
- * @param title название товара
- * @param price цена товара
- * @param categoryId идентификатор категории, к которой относится товар
- * @param isBestSeller флаг, указывающий является ли товар бестселлером
- * @param imageRes ресурс изображения товара
- * @param isFavorite флаг, находится ли товар в избранном у текущего пользователя
- * @param description подробное описание товара из базы данных
  */
 data class CatalogProduct(
-    val id: String,
-    val title: String,
-    val price: Double,
-    val categoryId: String?,
-    val isBestSeller: Boolean,
-    val imageRes: Int,
-    val isFavorite: Boolean = false,
-    val description: String = ""        // описание из базы
+    val id: String,//уникальный идентификатор товара
+    val title: String,//название товара
+    val price: Double,//цена товара
+    val categoryId: String?,//идентификатор категории, к которой относится товар
+    val isBestSeller: Boolean,//флаг, указывающий является ли товар бестселлером
+    val imageRes: Int,//ресурс изображения товара
+    val isFavorite: Boolean = false,//флаг, находится ли товар в избранном у текущего пользователя
+    val description: String = ""        // описание из базы данных
 )
 
 /**
  * Главный экран каталога товаров
- * @param navController навигационный контроллер для переходов между экранами
- * @param initialCategoryTitle начальная выбранная категория (по умолчанию "Outdoor")
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CatalogScreen(
-    navController: NavHostController,
-    initialCategoryTitle: String = "Outdoor"
+    navController: NavHostController,//навигационный контроллер для переходов между экранами
+    initialCategoryTitle: String = "Outdoor"//начальная выбранная категория (по умолчанию "Outdoor")
 ) {
     // Предопределенный список категорий с их ID из базы данных
     val categories = listOf(
@@ -337,13 +325,11 @@ fun CatalogScreen(
 
 /**
  * Компонент карточки товара для отображения в сетке каталога
- * @param product данные товара для отображения
- * @param onToggleFavorite колбэк для переключения статуса избранного
  */
 @Composable
 private fun CatalogProductCard(
-    product: CatalogProduct,
-    onToggleFavorite: (CatalogProduct, Boolean) -> Unit
+    product: CatalogProduct,//данные товара для отображения
+    onToggleFavorite: (CatalogProduct, Boolean) -> Unit//колбэк для переключения статуса избранного
 ) {
     // Локальное состояние избранного для немедленного обновления UI
     var isFavorite by remember(product.id) { mutableStateOf(product.isFavorite) }

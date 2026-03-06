@@ -5,7 +5,7 @@ import retrofit2.Response
 import retrofit2.http.PATCH
 import retrofit2.http.*
 
-const val API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml6c3dqamR4aHN4dndwYnZ2aWNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI0NDY2NjYsImV4cCI6MjA4ODAyMjY2Nn0.2jYBR7I2luHVGT0rFdxSSSioNv16i-flg86xcKuQFDs"
+const val API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh0amZ6ZWJvcXllZnZpdmZmYXpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNzE4MDEsImV4cCI6MjA4NDY0NzgwMX0.9MdxrhdeECPNxAtl3sJjiJwS6w8KVdY87ZvIe5Cup4Y"
 
 data class ProfileDto(
     val id: String?,

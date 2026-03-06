@@ -39,10 +39,9 @@ class MainActivity : ComponentActivity() {
                 // Scaffold предоставляет базовую структуру экрана (можно добавить верхнюю/нижнюю панель)
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     /**
-                     * NavHost - контейнер для всех экранов приложения
                      * Определяет граф навигации и начальный экран
                      */
-                    NavHost(
+                    NavHost( //NavHost - контейнер для всех экранов приложения
                         navController = navController,
                         startDestination = "onboarding", // Стартовый экран - онбординг
                         modifier = Modifier.padding(innerPadding) // Учитываем отступы от Scaffold

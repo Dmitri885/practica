@@ -24,22 +24,15 @@ import com.example.practica.ui.viewModel.SignUpViewModel
 /**
  * Компонент кнопки регистрации с валидацией и обработкой состояния загрузки
  * Выделен в отдельный компонент для переиспользования и лучшей организации кода
- *
- * @param name введенное имя пользователя
- * @param email введенный email пользователя
- * @param password введенный пароль
- * @param isTermsAccepted флаг согласия с условиями обработки данных
- * @param viewModel ViewModel для регистрации (получается через viewModel())
- * @param navController навигационный контроллер для переходов
  */
 @Composable
 fun RegisterButton(
-    name: String,
-    email: String,
-    password: String,
-    isTermsAccepted: Boolean,
-    viewModel: SignUpViewModel = viewModel(),
-    navController: NavHostController
+    name: String,//введенное имя пользователя
+    email: String,//введенный email пользователя
+    password: String,//введенный пароль
+    isTermsAccepted: Boolean,//флаг согласия с условиями обработки данных
+    viewModel: SignUpViewModel = viewModel(),//ViewModel для регистрации (получается через viewModel())
+    navController: NavHostController//навигационный контроллер для переходов
 ) {
     // Получаем контекст для отображения Toast и работы с SharedPreferences
     val context = LocalContext.current
@@ -120,18 +113,6 @@ fun RegisterButton(
 /**
  * Функция валидации полей формы регистрации
  * Проверяет корректность введенных данных перед отправкой на сервер
- *
- * @param name имя пользователя
- * @param email email пользователя
- * @param password пароль
- * @param termsAccepted флаг согласия с условиями
- * @return true если все данные валидны, false в противном случае
- *
- * TODO: Реализовать логику валидации:
- * - Проверка что имя не пустое
- * - Проверка email на соответствие формату (использовать Patterns.EMAIL_ADDRESS)
- * - Проверка длины пароля (минимум 6 символов)
- * - Проверка что termsAccepted == true
  */
 fun validateInputs(
     name: String,

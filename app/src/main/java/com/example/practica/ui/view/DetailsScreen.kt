@@ -31,15 +31,12 @@ import kotlinx.coroutines.launch
 /**
  * Экран детальной информации о товаре
  * Отображает подробное описание, изображение, цену и позволяет управлять избранным
- *
- * @param navController навигационный контроллер для переходов между экранами
- * @param productId идентификатор товара, переданный через навигацию
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailsScreen(
-    navController: NavHostController,
-    productId: String
+    navController: NavHostController,//навигационный контроллер для переходов между экранами
+    productId: String//идентификатор товара, переданный через навигацию
 ) {
     // Получение данных авторизации текущего пользователя из глобальной сессии
     val token = UserSession.accessToken
