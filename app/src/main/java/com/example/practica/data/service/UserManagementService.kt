@@ -2,6 +2,7 @@ package com.example.practica.data.service
 
 import com.example.practica.data.model.*
 import retrofit2.Response
+import retrofit2.http.PATCH
 import retrofit2.http.*
 
 const val API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh0amZ6ZWJvcXllZnZpdmZmYXpwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwNzE4MDEsImV4cCI6MjA4NDY0NzgwMX0.9MdxrhdeECPNxAtl3sJjiJwS6w8KVdY87ZvIe5Cup4Y"
@@ -15,16 +16,38 @@ data class ProfileDto(
     val address: String?,
     val phone: String?
 )
+<<<<<<< HEAD
+=======
+data class FavouriteDto(
+    val id: String?,
+    val product_id: String?,
+    val user_id: String?
+)
+
+data class ProductDto(
+    val id: String,
+    val title: String,
+    val category_id: String?,
+    val cost: Double,
+    val description: String,
+    val is_best_seller: Boolean?
+)
+>>>>>>> Day-3
 
 interface UserManagementService {
 
     // ---------- AUTH ----------
 
+<<<<<<< HEAD
     @Headers("apikey: ${com.example.practica.data.service.API_KEY}", "Content-Type: " +
+=======
+    @Headers("apikey: $API_KEY", "Content-Type: " +
+>>>>>>> Day-3
             "application/json")
     @POST("auth/v1/signup")
     suspend fun signUp(@Body signUpRequest: SignUpRequest): Response<SignUpResponse>
 
+<<<<<<< HEAD
     @Headers("apikey: ${com.example.practica.data.service.API_KEY}", "Content-Type: application/json")
     @POST("auth/v1/token?grant_type=password")
     suspend fun signIn(@Body signInRequest: SignInRequest): Response<SignInResponse>
@@ -38,12 +61,31 @@ interface UserManagementService {
     suspend fun recoverPassword(@Body body: Map<String, String>): Response<Any>
 
     @Headers("apikey: ${com.example.practica.data.service.API_KEY}", "Content-Type: application/json")
+=======
+    @Headers("apikey: $API_KEY", "Content-Type: application/json")
+    @POST("auth/v1/token?grant_type=password")
+    suspend fun signIn(@Body signInRequest: SignInRequest): Response<SignInResponse>
+
+    @Headers("apikey: $API_KEY", "Content-Type: application/json")
+    @POST("auth/v1/verify")
+    suspend fun verifyOTP(@Body verifyOtpRequest: VerifyOtpRequest): Response<Any>
+
+    @Headers("apikey: $API_KEY", "Content-Type: application/json")
+    @POST("auth/v1/recover")
+    suspend fun recoverPassword(@Body body: Map<String, String>): Response<Any>
+
+    @Headers("apikey: $API_KEY", "Content-Type: application/json")
+>>>>>>> Day-3
     @POST("change-password")
     suspend fun changePassword(@Body body: ChangePasswordRequest): Response<Any>
 
     // ---------- PROFILES ----------
 
+<<<<<<< HEAD
     @Headers("apikey:${com.example.practica.data.service.API_KEY}")
+=======
+    @Headers("apikey: $API_KEY")
+>>>>>>> Day-3
     @GET("rest/v1/profiles")
     suspend fun getProfile(
         @Header("Authorization") authHeader: String,
@@ -51,7 +93,11 @@ interface UserManagementService {
         @Query("select") select: String = "*"
     ): List<ProfileDto>
 
+<<<<<<< HEAD
     @Headers("apikey: ${com.example.practica.data.service.API_KEY}", "Content-Type: application/json")
+=======
+    @Headers("apikey: $API_KEY", "Content-Type: application/json")
+>>>>>>> Day-3
     @PUT("rest/v1/profiles")
     suspend fun updateProfile(
         @Header("Authorization") authHeader: String,
@@ -59,4 +105,40 @@ interface UserManagementService {
         @Body body: Map<String, Any?>
     ): Response<Unit>
 
+<<<<<<< HEAD
+=======
+    // ---------- PRODUCTS ----------
+
+    @Headers("apikey: $API_KEY")
+    @GET("rest/v1/products")
+    suspend fun getProducts(
+        @Header("Authorization") authHeader: String,
+        @Query("select") select: String = "*"
+    ): List<ProductDto>
+
+    // ---------- FAVOURITE ----------
+
+    @Headers("apikey: $API_KEY")
+    @GET("rest/v1/favourite")
+    suspend fun getFavourites(
+        @Header("Authorization") authHeader: String,
+        @Query("user_id") userIdFilter: String, // "eq.<uuid>"
+        @Query("select") select: String = "id,product_id,user_id"
+    ): List<FavouriteDto>
+
+    @Headers("apikey: $API_KEY", "Content-Type: application/json")
+    @POST("rest/v1/favourite")
+    suspend fun addFavourite(
+        @Header("Authorization") authHeader: String,
+        @Body body: FavouriteRequest
+    ): Response<Unit>
+
+    @Headers("apikey: $API_KEY")
+    @DELETE("rest/v1/favourite")
+    suspend fun deleteFavourite(
+        @Header("Authorization") authHeader: String,
+        @Query("user_id") userIdFilter: String, // "eq.<uuid>"
+        @Query("product_id") productIdFilter: String // "eq.<uuid>"
+    ): Response<Unit>
+>>>>>>> Day-3
 }
